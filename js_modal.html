@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>js Modal</title>
+    <link rel="stylesheet" href="js_modal_css.css" >
+
+</head>
+<body>
+<h1>
+    REGISTRATION YOUR ACCOUNT
+</h1>
+
+<p>Sing up
+</p>
+
+
+<button class="contact-me-btn">contact info</button>
+<div class="modal contact-me-modal">
+    <button class="close-btn">close me</button>
+    <h2>Registration</h2>
+    <form class="contact-form">
+        <div class="row">
+        <label for="firstname">Name:</label><input type="text" id="firstname">
+        </div>
+        <div class="row">
+            <label for="lastname">Lastname</label><input type="text" id="lastname">
+        </div>
+        <div class="row">
+            <label for="email">E-mail:</label><input type="text" id="lastname">
+        </div>
+        <div class="row">
+            <label for="msg-text">Text:</label><input type="text" id="email">
+        </div>
+        <div class="row">
+            <label for="submit">Submit</label>
+        </div>
+
+    </form>
+</div>
+
+</body>
+
+<script>
+    var contactMeBtn = document.querySelector(".contact-me-btn");
+    contactMeBtn.addEventListener("click", function () {
+        document.body.classList.add("modal-opened");
+    },false);
+
+
+    var closeModalBtn = document.querySelector(".modal .close-btn")
+    closeModalBtn.addEventListener("click",function(){
+        document.body.classList.remove("modal-opened");
+
+    },false);
+
+    document.addEventListener("keyup", function (evt) {
+        if(evt.keyCode === 27){
+            document.body.classList.remove("modal-opened");
+        }
+    }, false);
+
+</script>
+</html>
+
